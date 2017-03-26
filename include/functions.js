@@ -28,4 +28,7 @@ function onLoad() {
     for (x in available_pins) {
         pinState(available_pins[x]);
     }
+    setInterval(function() {
+        document.getElementById('log').innerHtml += (new Date().toISOString()) + ': ' + socket.connected;
+    }, 1000);
 }
