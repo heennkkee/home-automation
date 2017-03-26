@@ -18,15 +18,33 @@ body {
     padding: 10px;
     border-radius: 10px;
 }
+
 h2 {
     margin-top: 0 !important;
 }
+
 .jimFakkingNightshade {
     font-family: 'Jim Nightshade', cursive;
 }
 .switch-list {
     flex-grow: 1;
 }
+
 .mdl-switch {
     width: auto !important;
+}
+
+.footer {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+i.fa {
+    color: black;
+    color: rgba(0, 0, 0, 0.9);
+}
+
+i.fa:hover {
+    color: inherit;
 }
