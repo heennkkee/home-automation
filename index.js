@@ -8,7 +8,7 @@ const path = require('path');
 
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
-    
+
 const port = 80;
 
 
@@ -86,7 +86,7 @@ app.post('/logThis', (req, res) => {
 });
 
 
-http.listen(port, (err) => {
+app.listen(port, (err) => {
     if (err) {
         return console.log('someting bad happened', err);
     }
