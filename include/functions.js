@@ -1,6 +1,6 @@
 var available_pins = [2];
 
-var socket = io.connect('http://' + internalIP);
+var socket = io.connect('http://' + location.hostName + ':2593');
 
 socket.on('drawPinState', function (data) {
     if (data.val === "1") {
