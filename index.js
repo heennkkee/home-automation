@@ -54,6 +54,7 @@ app.set('views', path.join(__dirname, 'views'));
 
 
 app.use(express.static(path.join(__dirname, 'include')));
+app.use(express.static(path.join(__dirname, 'socket.io')));
 
 io.on('connection', function (socket) {
     // URL TO THE ESP8266 WE'RE CONTROLLING!
