@@ -12,11 +12,18 @@ const io = require('socket.io')(server);
 
 const port = 80;
 
-server.listen(port, (err) => {
+app.listen(port, (err) => {
     if (err) {
         return console.log('someting bad happened', err);
     }
     console.log(`server is listening on port ${port}`);
+});
+
+server.listen(2596, (err) => {
+    if (err) {
+        return console.log('someting bad happened', err);
+    }
+    console.log(`server is listening on port 2593`);
 })
 
 
@@ -54,7 +61,6 @@ app.set('views', path.join(__dirname, 'views'));
 
 
 app.use(express.static(path.join(__dirname, 'include')));
-app.use(express.static(path.join(__dirname, 'socket.io')));
 
 io.on('connection', function (socket) {
     // URL TO THE ESP8266 WE'RE CONTROLLING!
