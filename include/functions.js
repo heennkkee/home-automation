@@ -29,6 +29,6 @@ function onLoad() {
         pinState(available_pins[x]);
     }
     setInterval(function() {
-        document.getElementById('log').innerHtml += (new Date().toISOString()) + ': ' + socket.connected;
+        document.getElementById('log').innerHTML += (new Date().toISOString()) + ': ' + socket.connected;
     }, 1000);
 }
