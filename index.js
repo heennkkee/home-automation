@@ -12,43 +12,13 @@ const io = require('socket.io')(server);
 
 const port = 80;
 
-app.listen(port, (err) => {
+server.listen(port, (err) => {
     if (err) {
         return console.log('someting bad happened', err);
     }
     console.log(`server is listening on port ${port}`);
 });
 
-server.listen(2596, (err) => {
-    if (err) {
-        return console.log('someting bad happened', err);
-    }
-    console.log(`server is listening on port 2593`);
-})
-
-
-// Get internal IP
-const os = require('os');
-var internalIP;
-var ifaces = os.networkInterfaces();
-
-Object.keys(ifaces).forEach(function (ifname) {
-  var alias = 0;
-  ifaces[ifname].forEach(function (iface) {
-    if ('IPv4' !== iface.family || iface.internal !== false) {
-      // skip over internal (i.e. 127.0.0.1) and non-ipv4 addresses
-      return;
-    }
-    if (alias >= 1) {
-      // this single interface has multiple ipv4 addresses
-      console.log(ifname + ':' + alias, iface.address);
-    } else {
-      // this interface has only one ipv4 adress
-      internalIP = iface.address;
-    }
-    ++alias;
-  });
-});
 
 app.engine('.hbs', exphbs({
     defaultLayout: 'main',
@@ -90,7 +60,7 @@ io.on('connection', function (socket) {
 
 app.get('/', (req, res) => {
     res.render('index', {
-        internalIP: internalIP
+
     });
 
 });
