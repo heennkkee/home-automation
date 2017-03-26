@@ -17,6 +17,7 @@ function setValue(me) {
     var value = me.parentNode.className.indexOf("is-checked") > -1 ? 0 : 1;
 
     socket.emit('set', {pin: pin, val: value});
+    event.preventDefault();
 }
 
 function pinState(pin) {
