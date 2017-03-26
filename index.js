@@ -8,9 +8,7 @@ const path = require('path');
 
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
-
-http.listen(2593);
-
+    
 const port = 80;
 
 
