@@ -1,16 +1,23 @@
 const express = require('express');
-const exphbs = require('express-handlebars');
-const requestify = require('requestify');
-
 const app = express();
 
 const path = require('path');
 
-const http = require('http').Server(app);
-const io = require('socket.io')(http);
+const exphbs = require('express-handlebars');
+const requestify = require('requestify');
+
+
+const server = require('http').Server(app);
+const io = require('socket.io')(server);
 
 const port = 80;
 
+server.listen(port, (err) => {
+    if (err) {
+        return console.log('someting bad happened', err);
+    }
+    console.log(`server is listening on port ${port}`);
+})
 
 
 // Get internal IP
@@ -84,11 +91,3 @@ app.get('/', (req, res) => {
 app.post('/logThis', (req, res) => {
     console.log(req.body);
 });
-
-
-app.listen(port, (err) => {
-    if (err) {
-        return console.log('someting bad happened', err);
-    }
-    console.log(`server is listening on port ${port}`);
-})
