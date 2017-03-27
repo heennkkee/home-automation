@@ -1,12 +1,14 @@
 <div class="wrapper">
     <h2 class="jimFakkingNightshade">SWAG_HOME.INIT()</h2>
     <div class="switch-list">
-        
-        <div class="switch">
-            <input id="cmn-toggle-1" id="pin_2" data-pin=2 class="cmn-toggle cmn-toggle-round" onchange="setValue(this)" type="checkbox">
-            <label for="cmn-toggle-1"></label>
-        </div>
-
+        <!-- <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="pin_2" onmouseup="testing(this)">
+            <input type="checkbox" id="pin_2" data-pin=2 class="mdl-switch__input" onchange="setValue(this)">
+            <span class="mdl-switch__label">Epic Diode</span>
+        </label> -->
+        <label class="switch">
+            <input id="pin_2" data-pin=2 type="checkbox" class="toggler" onclick="setValue(this)">
+            <div class="slider"></div>
+        </label>
     </div>
     <div style="height: 300px; overflow-y: scroll;" id="log">
     </div>
