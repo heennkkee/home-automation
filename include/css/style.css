@@ -40,6 +40,7 @@ input.cmn-toggle-round + label {
   background-color: #dddddd;
   border-radius: 60px;
 }
+
 input.cmn-toggle-round + label:before,
 input.cmn-toggle-round + label:after {
   display: block;
@@ -49,12 +50,14 @@ input.cmn-toggle-round + label:after {
   bottom: 1px;
   content: "";
 }
+
 input.cmn-toggle-round + label:before {
   right: 1px;
   background-color: #f1f1f1;
   border-radius: 60px;
   transition: background 0.4s;
 }
+
 input.cmn-toggle-round + label:after {
   width: 58px;
   background-color: #fff;
