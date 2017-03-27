@@ -9,11 +9,11 @@ var socket = io.connect();
 socket.on('drawPinState', function (data) {
     available_pins[data.pin].sending = false;
     if (data.val === "1") {
-        document.getElementById('pin_' + data.pin).parentNode.className += " is-checked";
-        document.getElementById('pin_' + data.pin).checked = "checked";
+        // document.getElementById('pin_' + data.pin).parentNode.className += " is-checked";
+        // document.getElementById('pin_' + data.pin).checked = "checked";
     } else {
-        document.getElementById('pin_' + data.pin).parentNode.className = document.getElementById('pin_' + data.pin).parentNode.className.replace(" is-checked", "");
-        document.getElementById('pin_' + data.pin).checked = "";
+        // document.getElementById('pin_' + data.pin).parentNode.className = document.getElementById('pin_' + data.pin).parentNode.className.replace(" is-checked", "");
+        // document.getElementById('pin_' + data.pin).checked = "";
     }
 });
 
@@ -30,6 +30,7 @@ function setValue(me) {
     available_pins[pin].sending = true;
 
     socket.emit('set', {pin: pin, val: value});
+    this.blur();
     event.preventDefault();
 }
 
